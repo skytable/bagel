@@ -24,7 +24,7 @@ fn generate_unnamed(fields: Vec<UnnamedFieldInfo<'_>>, ast: &DeriveInput) -> Tok
     let mut self_args = quote! {};
     for (ty, _attrs) in fields {
         let ret: Option<::quote::__private::TokenStream> = match ty {
-            Type::Path(_) => Some(quote! { ::dough::Constdef::DEFAULT }),
+            Type::Path(_) => Some(quote! { ::bagel::Constdef::DEFAULT }),
             Type::Array(arr) => type_processor::recursive_process_array(arr).map(|tokens| {
                 quote! {
                     [#tokens]
@@ -63,7 +63,7 @@ fn generate_unnamed(fields: Vec<UnnamedFieldInfo<'_>>, ast: &DeriveInput) -> Tok
                 Self::default()
             }
         }
-        impl #impl_gen ::dough::Constdef for #struct_name #ty_gen #where_clause {
+        impl #impl_gen ::bagel::Constdef for #struct_name #ty_gen #where_clause {
             const DEFAULT: Self = Self::default();
         }
     };
@@ -77,7 +77,7 @@ fn generate_named(fields: Vec<NamedFieldInfo<'_>>, ast: &DeriveInput) -> TokenSt
     for (field, ty, _attrs) in fields {
         let ret: Option<::quote::__private::TokenStream> = match ty {
             Type::Path(_) => Some(quote! {
-                ::dough::Constdef::DEFAULT
+                ::bagel::Constdef::DEFAULT
             }),
             Type::Array(arr) => type_processor::recursive_process_array(arr).map(|tokens| {
                 quote! {
@@ -119,7 +119,7 @@ fn generate_named(fields: Vec<NamedFieldInfo<'_>>, ast: &DeriveInput) -> TokenSt
                 Self::default()
             }
         }
-        impl #impl_gen ::dough::Constdef for #struct_name #ty_gen #where_clause {
+        impl #impl_gen ::bagel::Constdef for #struct_name #ty_gen #where_clause {
             const DEFAULT: Self = Self::default();
         }
     };
