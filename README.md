@@ -1,5 +1,7 @@
 # 🥯 `bagel`: Always baked, never fried
 
+![Rust stable](https://img.shields.io/badge/rust-stable-brightgreen?style=for-the-badge) [![docs.rs](https://img.shields.io/docsrs/bagel?style=for-the-badge)](https://docs.rs/bagel) [![Crates.io](https://img.shields.io/crates/v/bagel?style=for-the-badge)](https://crates.io/crates/bagel) [![Discord](https://img.shields.io/discord/729378001023926282?style=for-the-badge)](https://discord.gg/QptWFdx) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/skytable/bagel/Rust?style=for-the-badge)](https://github.com/skytable/bagel/actions)
+
 `bagel` is a collection of macros and other _things_ that we frequently use at [Skytable](https://github.com/skytable/skytable),
 primarily to get **work done at compile-time** (because we like it baked :P). This crate contains some of the stuff we use, and we'll add more of the "magic" soon.
 
