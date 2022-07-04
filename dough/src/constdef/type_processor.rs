@@ -8,7 +8,7 @@ pub(super) fn recursive_process_tuple(tuple: &TypeTuple) -> Option<quote::__priv
             Type::Path(_) => {
                 inner_decl = quote! {
                     #inner_decl
-                    ::constant::Constdef::DEFAULT,
+                    ::dough::Constdef::DEFAULT,
                 };
             }
             Type::Tuple(ref tuple) => {
@@ -38,7 +38,7 @@ pub(super) fn recursive_process_array(array: &TypeArray) -> Option<quote::__priv
         Type::Path(_) => {
             inner_decl = quote! {
                 #inner_decl
-                ::constant::Constdef::DEFAULT; #len
+                ::dough::Constdef::DEFAULT; #len
             };
         }
         Type::Array(arr) => {
