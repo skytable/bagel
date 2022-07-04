@@ -9,7 +9,7 @@
 //! - [`Ctor`]: Derive constructors
 //! - [`Gtor`]: Derive getters
 //! - [`Stor`]: Derive setters
-//! - [`def`]: Use the [default declaration syntax](https://github.com/skytable/bagel/README.md#default-declaration-syntax)
+//! - [`def`]: Use the [default declaration syntax](https://github.com/skytable/bagel#default-declaration-syntax)
 //!
 
 #[macro_use]

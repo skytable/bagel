@@ -1,5 +1,5 @@
 #[macro_export]
-/// The [`def`] macro enables you to use the [default declaration syntax](https://github.com/skytable/bagel/README.md#default-declaration-syntax).
+/// The [`def`] macro enables you to use the [default declaration syntax](https://github.com/skytable/bagel#default-declaration-syntax).
 ///
 /// ## Example
 /// ```
@@ -33,12 +33,12 @@
 macro_rules! def {
     (
         $(#[$meta:meta])*
-        $vis:vis struct $ident:ident {$($field:ident: $ty:ty $(= $expr:expr)?),*$(,)?}
+        $vis:vis struct $ident:ident {$($(#[$fieldmeta:meta])*$field:ident: $ty:ty $(= $expr:expr)?),*$(,)?}
     ) => {
         $(#[$meta])*
         $vis struct $ident {$($field: $ty,)*}
         impl ::core::default::Default for $ident {
-            fn default() -> Self { Self {$($field: $crate::process_defexpr!($($expr)?),)*}}
+            fn default() -> Self { Self {$($(#[$fieldmeta])* $field: $crate::process_defexpr!($($expr)?),)*}}
         }
     };
 }
