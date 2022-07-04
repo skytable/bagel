@@ -1,4 +1,4 @@
-//! [`dough`]
+//! # `dough`
 //!
 //! Consider using the [`bagel`](https://crates.io/crates/bagel) crate. The `dough` crate provides
 //! supporting macros for bagel

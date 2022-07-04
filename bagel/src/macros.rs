@@ -38,13 +38,14 @@ macro_rules! def {
         $(#[$meta])*
         $vis struct $ident {$($field: $ty,)*}
         impl ::core::default::Default for $ident {
-            fn default() -> Self { Self {$($(#[$fieldmeta])* $field: $crate::process_defexpr!($($expr)?),)*}}
+            fn default() -> Self { Self {$($(#[$fieldmeta])* $field: $crate::_defexpr!($($expr)?),)*}}
         }
     };
 }
 
 #[macro_export]
-macro_rules! process_defexpr {
+#[doc(hidden)]
+macro_rules! _defexpr {
     () => {
         ::core::default::Default::default()
     };
