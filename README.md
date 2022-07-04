@@ -1,7 +1,7 @@
 # 🥯 `bagel`: Always baked, never fried
 
 `bagel` is a collection of macros and other _things_ that we frequently use at [Skytable](https://github.com/skytable/skytable),
-primarily to get **work done at compile-time** (because we like it baked :P). This crate contains some of the stuff we use, and we're going to soon transition to entirely using this crate for the "magic".
+primarily to get **work done at compile-time** (because we like it baked :P). This crate contains some of the stuff we use, and we'll add more of the "magic" soon.
 
 ## Importing
 

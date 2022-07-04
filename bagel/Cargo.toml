@@ -10,4 +10,4 @@ repository = "https://github.com/skytable/bagel"
 version = "0.1.0"
 
 [dependencies]
-dough = "0.1.0"
+dough = "0.1.1"
