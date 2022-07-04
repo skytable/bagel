@@ -1,6 +1,13 @@
 [package]
+authors = ["Sayan Nandan <nandansayan@outlook.com>"]
+description = "Compile-time evaluation and other tools"
+documentation = "https://docs.rs/bagel"
+edition = "2018"
+license = "Apache-2.0"
 name = "bagel"
+readme = "../README.md"
+repository = "https://github.com/skytable/bagel"
 version = "0.1.0"
-edition = "2021"
 
 [dependencies]
+dough = "0.1.0"

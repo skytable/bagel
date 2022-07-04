@@ -1,7 +1,12 @@
 [package]
 name = "dough"
 version = "0.1.0"
-edition = "2021"
+edition = "2018"
+license = "Apache-2.0"
+description = "Internal macros for the bagel crate"
+documentation = "https://docs.rs/bagel"
+repository = "https://github.com/skytable/bagel"
+authors = ["Sayan Nandan <nandansayan@outlook.com>"]
 
 [lib]
 proc-macro = true

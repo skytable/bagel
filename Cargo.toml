@@ -1,5 +1,2 @@
 [workspace]
-members = [
-    "bagel",
-    "dough"
-]
+members = ["bagel", "dough"]
