@@ -9,12 +9,12 @@ mod constdef_impls;
 ///
 /// ## Implementing this trait
 ///
-/// Usually, for implementing this trait -- you'll simply need to use `#[derive(constant::Constdef)]`
+/// Usually, for implementing this trait -- you'll simply need to use `#[derive(bagel::Constdef)]`
 /// and the macro will do the magic for you. In other cases, you'll need to implement it yourself,
 /// like this for example:
 ///
 /// ```
-/// use constant::Constdef;
+/// use bagel::Constdef;
 ///
 /// struct MyWeirdBool(bool);
 ///
@@ -44,7 +44,7 @@ pub trait Constdef {
 ///
 /// ## Example
 /// ```
-/// use constant::Constdef;
+/// use bagel::Constdef;
 ///
 /// type MyType = u16;
 /// #[derive(Constdef)]
