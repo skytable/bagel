@@ -2,6 +2,10 @@
 
 All changes to this project will be noted in this file.
 
+## Version 0.1.2
+
+Fixed docstrings
+
 ## Version 0.1.1
 
 ### Fixes

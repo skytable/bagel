@@ -99,7 +99,7 @@ pub use dough::Constdef;
 ///
 /// ## Example
 /// ```
-/// use derived::Ctor;
+/// use bagel::Ctor;
 ///
 /// #[derive(Ctor)]
 /// struct MyStruct {
@@ -127,7 +127,7 @@ pub use dough::Constdef;
 /// ### Example
 ///
 /// ```
-/// use derived::Ctor;
+/// use bagel::Ctor;
 ///
 /// #[derive(Ctor)]
 /// #[ctor_const]
@@ -150,7 +150,7 @@ pub use dough::Ctor;
 ///
 /// ## Example
 /// ```
-/// use derived::Gtor;
+/// use bagel::Gtor;
 /// #[derive(Gtor)]
 /// struct MyStruct {
 ///     name: String,
@@ -178,7 +178,7 @@ pub use dough::Ctor;
 /// ### Example
 ///
 /// ```
-/// use derived::{Ctor, Gtor};
+/// use bagel::{Ctor, Gtor};
 /// #[derive(Ctor, Gtor)]
 /// #[gtor(get, get_mut)]
 /// pub struct Mutable {
@@ -225,7 +225,7 @@ pub use dough::Gtor;
 ///
 /// ## Example
 /// ```
-/// use derived::Stor;
+/// use bagel::Stor;
 /// #[derive(Stor)]
 /// struct MyStruct {
 ///     name: String,
