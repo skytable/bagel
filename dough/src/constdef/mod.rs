@@ -60,11 +60,11 @@ fn generate_unnamed(fields: Vec<UnnamedFieldInfo<'_>>, ast: &DeriveInput) -> Tok
         }
         impl #impl_gen ::core::default::Default for #struct_name #ty_gen #where_clause {
             fn default() -> Self {
-                Self::default()
+                ::bagel::Constdef::DEFAULT
             }
         }
         impl #impl_gen ::bagel::Constdef for #struct_name #ty_gen #where_clause {
-            const DEFAULT: Self = Self::default();
+            const DEFAULT: Self = #struct_name::default();
         }
     };
     tokens.into()
@@ -116,11 +116,11 @@ fn generate_named(fields: Vec<NamedFieldInfo<'_>>, ast: &DeriveInput) -> TokenSt
         }
         impl #impl_gen ::core::default::Default for #struct_name #ty_gen #where_clause {
             fn default() -> Self {
-                Self::default()
+                ::bagel::Constdef::DEFAULT
             }
         }
         impl #impl_gen ::bagel::Constdef for #struct_name #ty_gen #where_clause {
-            const DEFAULT: Self = Self::default();
+            const DEFAULT: Self = #struct_name::default();
         }
     };
     tokens.into()

@@ -7,7 +7,7 @@ license = "Apache-2.0"
 name = "bagel"
 readme = "../README.md"
 repository = "https://github.com/skytable/bagel"
-version = "0.1.2"
+version = "0.1.3"
 
 [dependencies]
-dough = "0.1.1"
+dough = "0.1.3"

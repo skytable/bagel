@@ -13,11 +13,18 @@ bagel = "0.1"
 
 ## What bagel can do
 
-- `Ctor`: Derive constructors
-- `Gtor`: Derive getters
-- `Stor`: Derive setters
-- `Constdef`: Derive constant, compile-time default implementations
 - `def`: Use the [default declaration syntax](#default-declaration-syntax)
+- `Ctor`: Derive constructors:
+  - Full lifetimes, generics and where clause support
+  - `#[phantom]`: Auto elide `PhantomData` fields
+  - `#[ctor_const]`: Make the constructor a `const fn`
+- `Gtor`: Derive getters:
+  - Full lifetimes, generics and where clause support
+  - Advanced attributes: `#[gtor_const]`, `#[gtor_copy]`, `#[gtor_skip]`, `#[phantom]` and `#[gtor]`
+- `Stor`: Derive setters
+  - Full lifetimes, generics and where clause support
+  - Skip setter with `#[stor_skip]` or `#[phantom]`
+- `Constdef`: Derive constant, compile-time default implementations. See [an example here](#constdef-example)
 
 ## Default declaration syntax
 
@@ -63,6 +70,29 @@ assert_eq!(myoven.starting_temperature, 0);
 assert_eq!(myoven.oven_name, "my_kitchen_wifi_oven1");
 assert_eq!(myoven.items_to_bake[3], "pie");
 assert_eq!(myoven.people_buffer.len(), 2);
+```
+
+## `Constdef` example
+
+```rust
+use bagel::Constdef;
+
+#[derive(Constdef)]
+struct Port {
+    requests: usize,
+    admin: bool,
+}
+
+#[derive(Constdef)]
+struct PortLogger {
+    ports: [Port; 65536],
+    root_pid: usize,
+}
+
+const PORT_LOGGER: PortLogger = PortLogger::default();
+
+assert_eq!(PORT_LOGGER.ports[0].requests, 0);
+assert_eq!(PORT_LOGGER.ports[65535].admin, false);
 ```
 
 ## License

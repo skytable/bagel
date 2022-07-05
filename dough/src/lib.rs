@@ -1,7 +1,9 @@
 //! # `dough`
 //!
 //! Consider using the [`bagel`](https://crates.io/crates/bagel) crate. The `dough` crate provides
-//! supporting macros for bagel
+//! supporting macros for bagel.
+//!
+//! WARNING: Do not rely on the API of this crate
 //!
 
 use proc_macro::TokenStream;
